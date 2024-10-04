@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TextChangeTest {
 
-    @Mock
+    @Mock  //ANNOTATION
     private MakeNew make;
-
+    
     @InjectMocks
     private TextChange textChange;
 
@@ -28,13 +28,15 @@ class TextChangeTest {
         String expected = "java";
 
         // Mock the make.makeLowerText behavior
-        when(make.makeLowerText(input)).thenReturn(expected);
+        when(make.makeLowerText(input)).thenReturn(expected);  //RECORD PHASE
+        //when()----MOCKITO
+        //expected()---EASYMOCK
 
         // Act
-        String result = textChange.makeTextChangeLower(input);
+        String result = textChange.makeTextChangeLower(input);  //java
 
         // Assert
-        assertEquals(expected, result);
+        assertEquals(expected, result); //java, java --PASS
     }
 
     @Test
